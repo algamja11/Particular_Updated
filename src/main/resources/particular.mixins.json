@@ -30,7 +30,7 @@
     "InjectLeavesBlock",
     "InjectWaterBubbleParticle",
     "InjectWaterFluid",
-    "InjectWorldRenderer",
+    "InjectWeatherRendering",
     "InvokerLivingEntity",
     "InjectConfigWrapper"
   ]

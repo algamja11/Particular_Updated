@@ -6,6 +6,7 @@ import net.minecraft.block.CakeBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldAccess;
@@ -23,7 +24,7 @@ public class InjectCakeBlock
 		if (!Main.CONFIG.cakeEatingParticles()) { return; }
 
 		ItemStack cake = Items.CAKE.getDefaultStack();
-		player.playSound(player.getEatSound(cake), 1f, 1f);
+		player.playSound(SoundEvents.ENTITY_GENERIC_EAT.value(), 1f, 1f);
 		((InvokerLivingEntity) player).spawnParticles(cake, 5);
 	}
 }

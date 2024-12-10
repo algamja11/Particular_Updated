@@ -164,7 +164,7 @@ public class Main implements ClientModInitializer
 
 	public static void registerLeafData(Identifier id, LeafData leafData)
 	{
-		Registries.BLOCK.getOrEmpty(id).ifPresent(block -> leavesData.put(block, leafData));
+		Registries.BLOCK.getOptionalValue(id).ifPresent(block -> leavesData.put(block, leafData));
 	}
 
 	public static LeafData getLeafData(Block block)
