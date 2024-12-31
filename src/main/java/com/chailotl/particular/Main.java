@@ -47,23 +47,25 @@ public class Main implements ClientModInitializer
 	public static ConcurrentHashMap<BlockPos, Integer> cascades = new ConcurrentHashMap<>();
 	private static float fireflyFrequency = 1f;
 
-	private static Map<Block, LeafData> leavesData = new HashMap<>(Map.of(
-		Blocks.OAK_LEAVES, new LeafData(Particles.OAK_LEAF),
-		Blocks.BIRCH_LEAVES, new LeafData(Particles.BIRCH_LEAF, new Color(FoliageColors.getBirchColor())),
-		Blocks.SPRUCE_LEAVES, new LeafData(Particles.SPRUCE_LEAF, new Color(FoliageColors.getSpruceColor())),
-		Blocks.JUNGLE_LEAVES, new LeafData(Particles.JUNGLE_LEAF),
-		Blocks.ACACIA_LEAVES, new LeafData(Particles.ACACIA_LEAF),
-		Blocks.DARK_OAK_LEAVES, new LeafData(Particles.DARK_OAK_LEAF),
-		Blocks.AZALEA_LEAVES, new LeafData(Particles.AZALEA_LEAF, Color.white),
-		Blocks.FLOWERING_AZALEA_LEAVES, new LeafData(Particles.AZALEA_LEAF, Color.white),
-		Blocks.MANGROVE_LEAVES, new LeafData(Particles.MANGROVE_LEAF),
-		Blocks.CHERRY_LEAVES, new LeafData(null)
-	));
+	private static Map<Block, LeafData> leavesData = new HashMap<>();
 
 	@Override
 	public void onInitializeClient()
 	{
 		LOGGER.info("I am quite particular about the effects I choose to add :3");
+
+		// Populate leaves data
+		leavesData.put(Blocks.OAK_LEAVES, new LeafData(Particles.OAK_LEAF));
+		leavesData.put(Blocks.BIRCH_LEAVES, new LeafData(Particles.BIRCH_LEAF, new Color(FoliageColors.BIRCH)));
+		leavesData.put(Blocks.SPRUCE_LEAVES, new LeafData(Particles.SPRUCE_LEAF, new Color(FoliageColors.SPRUCE)));
+		leavesData.put(Blocks.JUNGLE_LEAVES, new LeafData(Particles.JUNGLE_LEAF));
+		leavesData.put(Blocks.ACACIA_LEAVES, new LeafData(Particles.ACACIA_LEAF));
+		leavesData.put(Blocks.DARK_OAK_LEAVES, new LeafData(Particles.DARK_OAK_LEAF));
+		leavesData.put(Blocks.AZALEA_LEAVES, new LeafData(Particles.AZALEA_LEAF, Color.white));
+		leavesData.put(Blocks.FLOWERING_AZALEA_LEAVES, new LeafData(Particles.AZALEA_LEAF, Color.white));
+		leavesData.put(Blocks.MANGROVE_LEAVES, new LeafData(Particles.MANGROVE_LEAF));
+		leavesData.put(Blocks.CHERRY_LEAVES, new LeafData(null));
+		leavesData.put(Blocks.PALE_OAK_LEAVES, new LeafData(null));
 
 		// Register
 		Particles.register();
