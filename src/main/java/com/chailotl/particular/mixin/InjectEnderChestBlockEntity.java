@@ -71,7 +71,7 @@ public abstract class InjectEnderChestBlockEntity extends BlockEntity implements
 				blockEntity.ticksUntilNextSwitch = world.random.nextBetween(minOpenTime, maxOpenTime);
 				((AccessorEnderChestBlockEntity) blockEntity).getLidAnimator().setOpen(true);
 				((InvokerViewerCountManager)manager).invokeOnContainerOpen(world, pos, blockEntity.getCachedState());
-				world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_BUBBLE_COLUMN_UPWARDS_AMBIENT, SoundCategory.AMBIENT, 1f, 1f);
+				world.playSoundAtBlockCenterClient(pos, SoundEvents.BLOCK_BUBBLE_COLUMN_UPWARDS_AMBIENT, SoundCategory.AMBIENT, 1f, 1f, false);
 			}
 		}
 
